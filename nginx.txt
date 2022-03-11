@@ -1,0 +1,81 @@
+function isBot(&$botname = ''){
+/* Эта функция будет проверять, является ли посетитель роботом поисковой системы */
+
+$bots = array(
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0');
+
+  /* $bots = array(
+    'rambler','googlebot','aport','yahoo','msnbot','turtle','mail.ru','omsktele',
+    'yetibot','picsearch','sape.bot','sape_context','gigabot','snapbot','alexa.com',
+    'megadownload.net','askpeter.info','igde.ru','ask.com','qwartabot','yanga.co.uk',
+    'scoutjet','similarpages','oozbot','shrinktheweb.com','aboutusbot','followsite.com',
+    'dataparksearch','google-sitemaps','appEngine-google','feedfetcher-google',
+    'liveinternet.ru','xml-sitemaps.com','agama','metadatalabs.com','h1.hrn.ru',
+    'googlealert.com','seo-rus.com','yaDirectBot','yandeG','yandex',
+    'yandexSomething','Copyscape.com','AdsBot-Google','domaintools.com',
+    'Nigma.ru','bing.com','dotnetdotcom'
+  ); */
+  foreach($bots as $bot)
+    if(stripos($_SERVER['HTTP_USER_AGENT'], $bot) !== false){
+      $botname = $bot;
+      return true;
+    }
+  return false;
+}
+
+
+Использование:
+
+if( isBot($bname) ) {
+   // Перебрасываем на Москву
+}
+
+
+
+https://github.com/nginx/njs/issues/74
+
+
+http://nginx.org/en/linux_packages.html#Ubuntu
+
+
+
+https://serverfault.com/questions/122315/nginx-rewrite-url-only-if-file-exists - по скармливанию прередеренных страниц браузеру
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+!!!!!!   https://habr.com/ru/post/74135/ - как раз для nginx
+ну и по времени 1:08:34 здесь: https://www.youtube.com/watch?v=Y8NeCAVBnzQ    посмотреть!!!
+/////////////////////////////////////////////////////////////////////////////
+Показать доступный список модулей
+
+Чтобы просмотреть список доступных модулей, выполните следующую команду (для Debian и Ubuntu):
+$ apt-cache search nginx-module
+
+
+https://habr.com/ru/post/74135/
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Yandex
+        'YandexBot', 'YandexAccessibilityBot', 'YandexMobileBot', 'YandexDirectDyn', 'YandexScreenshotBot',
+        'YandexImages', 'YandexVideo', 'YandexVideoParser', 'YandexMedia', 'YandexBlogs', 'YandexFavicons',
+        'YandexWebmaster', 'YandexPagechecker', 'YandexImageResizer', 'YandexAdNet', 'YandexDirect',
+        'YaDirectFetcher', 'YandexCalendar', 'YandexSitelinks', 'YandexMetrika', 'YandexNews',
+        'YandexNewslinks', 'YandexCatalog', 'YandexAntivirus', 'YandexMarket', 'YandexVertis',
+        'YandexForDomain', 'YandexSpravBot', 'YandexSearchShop', 'YandexMedianaBot', 'YandexOntoDB',
+        'YandexOntoDBAPI', 'YandexTurbo', 'YandexVerticals',
+
+        // Google
+        'Googlebot', 'Googlebot-Image', 'Mediapartners-Google', 'AdsBot-Google', 'APIs-Google',
+        'AdsBot-Google-Mobile', 'AdsBot-Google-Mobile', 'Googlebot-News', 'Googlebot-Video',
+        'AdsBot-Google-Mobile-Apps',
+
+        // Other
+        'Mail.RU_Bot', 'bingbot', 'Accoona', 'ia_archiver', 'Ask Jeeves', 'OmniExplorer_Bot', 'W3C_Validator',
+        'WebAlta', 'YahooFeedSeeker', 'Yahoo!', 'Ezooms', 'Tourlentabot', 'MJ12bot', 'AhrefsBot',
+        'SearchBot', 'SiteStatus', 'Nigma.ru', 'Baiduspider', 'Statsbot', 'SISTRIX', 'AcoonBot', 'findlinks',
+        'proximic', 'OpenindexSpider', 'statdom.ru', 'Exabot', 'Spider', 'SeznamBot', 'oBot', 'C-T bot',
+        'Updownerbot', 'Snoopy', 'heritrix', 'Yeti', 'DomainVader', 'DCPbot', 'PaperLiBot', 'StackRambler',
+        'msnbot', 'msnbot-media', 'msnbot-news',
+    ];
+
